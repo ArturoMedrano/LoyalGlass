@@ -1,4 +1,4 @@
-<!DOCTYPE html>   
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -8,25 +8,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    body { 
-      font-family: 'Poppins', sans-serif; 
-      color: #222; 
-      background-color: #e9ebf0; 
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+      background-color: #e9ebf0;
     }
 
     /* SPLASH SCREEN */
     #splash {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: #f4f4f9; display: flex; justify-content: center; align-items: center;
-      z-index: 2000; transition: opacity 1s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      transition: opacity 1s ease;
     }
-    .splash-content { display: flex; align-items: center; gap: 20px; animation: fadeZoom 2.5s ease forwards; }
-    #splash img { width: 120px; height: auto; }
-    #splash h1 { color: #0077b6; font-size: 2rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
-    #splash.hidden { opacity: 0; pointer-events: none; }
-    @keyframes fadeZoom { from { opacity: 0; transform: scale(0.1); } to { opacity: 1; transform: scale(3); } }
+
+    .splash-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      animation: fadeZoom 2.5s ease forwards;
+    }
+
+    #splash img {
+      width: 120px;
+      height: auto;
+    }
+
+    #splash h1 {
+      color: #0077b6;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    #splash.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes fadeZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.1);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(3);
+      }
+    }
 
     /* HEADER */
     header {
@@ -43,10 +87,14 @@
       align-items: center;
       justify-content: space-between;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       border: 1px solid #e0e0e0;
     }
-    header img { height: 50px; margin-right: 0.8rem; }
+
+    header img {
+      height: 50px;
+      margin-right: 0.8rem;
+    }
 
     nav a {
       color: #222;
@@ -57,9 +105,10 @@
       border-radius: 8px;
       transition: background 0.3s, color 0.3s, transform 0.3s;
     }
+
     nav a:hover {
       background: #0c2340;
-      color: #fff;          
+      color: #fff;
       transform: translateY(-2px);
     }
 
@@ -73,71 +122,124 @@
       text-align: center;
       overflow: hidden;
     }
+
     .hero video {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       z-index: 0;
     }
+
     .hero::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.35);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.35);
       z-index: 1;
     }
+
     .hero-overlay {
       position: relative;
       z-index: 2;
       color: #fff;
       animation: fadeIn 2s ease;
     }
-    .hero h2 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
-    .hero p { font-size: 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.4); }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    }
 
     /* HIGHLIGHTS */
-    .highlights { 
-      display: flex; 
-      justify-content: center; 
+    .highlights {
+      display: flex;
+      justify-content: center;
       gap: 1.5rem;
-      margin-top: -2.5rem; 
-      position: relative; 
-      z-index: 3; 
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 3;
     }
+
     .highlight-item {
       background: #fff;
       padding: 1rem;
       border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
       width: 220px;
       animation: fadeUp 1s ease forwards;
       opacity: 0;
     }
-    .highlight-item img { width:55px; height:55px; object-fit:contain; }
-    .highlight-item h3 { margin-top: 0.5rem; font-size: 1.1rem; }
+
+    .highlight-item img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+    }
+
+    .highlight-item h3 {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
 
     @keyframes fadeUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .highlight-item:nth-child(1) { animation-delay: 0.3s; }
-    .highlight-item:nth-child(2) { animation-delay: 0.6s; }
-    .highlight-item:nth-child(3) { animation-delay: 0.9s; }
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
 
-    section { 
-      padding: 3rem 2rem; 
-      max-width: 1200px; 
-      margin: 2rem auto; 
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .highlight-item:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+
+    .highlight-item:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+
+    .highlight-item:nth-child(3) {
+      animation-delay: 0.9s;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
       background-color: #ffffff;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       animation: fadeIn 1.5s ease;
     }
 
-    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     /* ABOUT & SERVICES estilo galería */
     .card-grid {
@@ -146,36 +248,85 @@
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
+
     .info-card {
       background: #fdfdfd;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
-    .info-card:hover { transform: translateY(-5px); }
-    .info-card img { width: 100%; height: 160px; object-fit: cover; }
-    .info-card .content { padding: 1rem; }
-    .info-card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; color: #0c2340; }
-    .info-card p { font-size: 0.95rem; line-height: 1.4; }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .info-card .content {
+      padding: 1rem;
+    }
+
+    .info-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #0c2340;
+    }
+
+    .info-card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
 
     /* PRODUCTS */
     .products {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem; margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
-    .product-card { 
-      background: #ffffff; 
-      border-radius: 12px; 
-      overflow: hidden; 
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
-    .product-card:hover { transform: translateY(-5px); }
-    .product-card img { width: 100%; height: 180px; object-fit: cover; }
-    .product-card .content { padding: 1rem; background: #0c2340; color: white; }
-    .product-card h3 { margin-bottom: 0.8rem; font-size: 1.2rem; border-bottom: 2px solid #25d366; display: inline-block; padding-bottom: 0.3rem; }
-    .product-card p { font-size: 0.9rem; line-height: 1.5; color: #f4f4f4; }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-card .content {
+      padding: 1rem;
+      background: #0c2340;
+      color: white;
+    }
+
+    .product-card h3 {
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+      border-bottom: 2px solid #25d366;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .product-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #f4f4f4;
+    }
 
     /* GALLERY */
     .image-grid {
@@ -184,59 +335,168 @@
       gap: 1rem;
       margin-top: 1.5rem;
     }
+
     .image-box {
       overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
+
     .image-box img {
       width: 100%;
       height: 200px;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
-    .image-box:hover { transform: scale(1.03); }
-    .image-box:hover img { transform: scale(1.1); }
 
-    iframe { border-radius: 8px; width: 100%; height: 300px; border: 0; }
+    .image-box:hover {
+      transform: scale(1.03);
+    }
+
+    .image-box:hover img {
+      transform: scale(1.1);
+    }
+
+    iframe {
+      border-radius: 8px;
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
 
     /* CONTACTO */
-    .contact-container { display: flex; flex-wrap: wrap; gap: 2rem; }
-    .contact-form, .contact-info { flex: 1; min-width: 300px; }
-    .contact-form label { display: block; margin: 0.5rem 0 0.2rem; font-weight: bold; }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1rem; font-size: 1rem;
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
-    .contact-form button { background: #25d366; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; }
-    .contact-form button:hover { background: #128c4a; }
-    .contact-info p { margin-bottom: 0.5rem; }
 
-    footer { background: #000; color: #fff; text-align: center; padding: 2rem 1rem; border-radius: 12px; }
+    .contact-form,
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background: #25d366;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .contact-form button:hover {
+      background: #128c4a;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 12px;
+    }
 
     /* BOTONES FLOTANTES */
-    .whatsapp-container, .facebook-container {
-      position: fixed; right: 30px; display: flex; flex-direction: column; align-items: center; z-index: 1001;
+    .whatsapp-container,
+    .facebook-container {
+      position: fixed;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1001;
     }
-    .whatsapp-container { bottom: 100px; }
-    .facebook-container { bottom: 30px; }
-    .whatsapp-float, .facebook-float {
-      width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 30px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); cursor: pointer; text-decoration: none; color: white;
+
+    .whatsapp-container {
+      bottom: 100px;
+    }
+
+    .facebook-container {
+      bottom: 30px;
+    }
+
+    .whatsapp-float,
+    .facebook-float {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
       transition: all 0.3s ease;
     }
-    .whatsapp-float { background-color: #25d366; }
-    .facebook-float { background-color: #1877f2; }
-    .whatsapp-float:hover { transform: scale(1.15); box-shadow: 0 0 20px #25d366; }
-    .facebook-float:hover { transform: scale(1.15); box-shadow: 0 0 20px #1877f2; }
+
+    .whatsapp-float {
+      background-color: #25d366;
+    }
+
+    .facebook-float {
+      background-color: #1877f2;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px #25d366;
+    }
+
+    .facebook-float:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px #1877f2;
+    }
 
     @media (max-width: 768px) {
-      .highlights { flex-direction: column; }
-      nav a { margin: 0.5rem; }
-      .hero h2 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .product-card img { height: 150px; }
-      .image-box img { height: 160px; }
+      .highlights {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0.5rem;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .product-card img {
+        height: 150px;
+      }
+
+      .image-box img {
+        height: 160px;
+      }
     }
   </style>
 </head>
@@ -302,7 +562,8 @@
         <img src="foto1.jpg" alt="About Us">
         <div class="content">
           <h3>Our Mission</h3>
-          <p>Loyasglass LLC is dedicated to providing high-quality glass solutions for commercial and residential needs.</p>
+          <p>Loyasglass LLC is dedicated to providing high-quality glass solutions for commercial and residential needs.
+          </p>
         </div>
       </div>
       <div class="info-card">
@@ -351,21 +612,25 @@
         <img src="fondo.jpeg" alt="Vidrio">
         <div class="content">
           <h3>VIDRIO</h3>
-          <p>Aquí encontrará la mejor selección de vidrio flotado en sus diferentes colores y espesores como, claro, gris, verde, satinado, vidrios opacos en sus diferentes figuras, además de vidrios reflectivos, de control solar y templado.</p>
+          <p>Aquí encontrará la mejor selección de vidrio flotado en sus diferentes colores y espesores como, claro,
+            gris, verde, satinado, vidrios opacos en sus diferentes figuras, además de vidrios reflectivos, de control
+            solar y templado.</p>
         </div>
       </div>
       <div class="product-card">
         <img src="fondo3.png" alt="Aluminio">
         <div class="content">
           <h3>ALUMINIO</h3>
-          <p>Gran variedad en perfiles de aluminio: Standard, Línea Nacional y Línea española. Líneas arquitectónicas en 1 1/2, 2 y 3 pulgadas. Ventanas, puertas corredizas, canceles de baño y vitrinas.</p>
+          <p>Gran variedad en perfiles de aluminio: Standard, Línea Nacional y Línea española. Líneas arquitectónicas en
+            1 1/2, 2 y 3 pulgadas. Ventanas, puertas corredizas, canceles de baño y vitrinas.</p>
         </div>
       </div>
       <div class="product-card">
         <img src="instalacion.jpg" alt="Herrajes">
         <div class="content">
           <h3>HERRAJES</h3>
-          <p>Una amplia gama de herrajes y accesorios para la instalación de aluminio. Bisagras, carretillas, jaladeras, chapas, silicones. Además de policarbonatos, acrílicos, plásticos y herrajes para cristal templado.</p>
+          <p>Una amplia gama de herrajes y accesorios para la instalación de aluminio. Bisagras, carretillas, jaladeras,
+            chapas, silicones. Además de policarbonatos, acrílicos, plásticos y herrajes para cristal templado.</p>
         </div>
       </div>
     </div>
@@ -409,7 +674,8 @@
         <p><strong>Email:</strong> <a href="mailto:loyasglass24@yahoo.com">loyasglass24@yahoo.com</a></p>
         <br>
         <!-- Mapa con ubicación exacta -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.986143933902!2d-104.82052098461944!3d39.98642797942109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c798e0b4a8c9b%3A0x2a9b40b7e30d4e23!2sBrighton%2C%20CO%2080601%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1699999999999"></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.986143933902!2d-104.82052098461944!3d39.98642797942109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c798e0b4a8c9b%3A0x2a9b40b7e30d4e23!2sBrighton%2C%20CO%2080601%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1699999999999"></iframe>
       </div>
     </div>
   </section>
@@ -421,19 +687,14 @@
 
   <!-- BOTONES FLOTANTES -->
   <div class="whatsapp-container">
-    <a href="https://wa.me/13035476936?text=Hola,%20¿en%20qué%20te%20puedo%20ayudar?" 
-       target="_blank" 
-       class="whatsapp-float" 
-       aria-label="Chat en WhatsApp">
+    <a href="https://wa.me/13035476936?text=Hola,%20¿en%20qué%20te%20puedo%20ayudar?" target="_blank"
+      class="whatsapp-float" aria-label="Chat en WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
 
   <div class="facebook-container">
-    <a href="https://www.facebook.com/LoyasGlass/" 
-       target="_blank" 
-       class="facebook-float" 
-       aria-label="Facebook">
+    <a href="https://www.facebook.com/LoyasGlass/" target="_blank" class="facebook-float" aria-label="Facebook">
       <i class="fab fa-facebook-f"></i>
     </a>
   </div>
@@ -447,4 +708,5 @@
   </script>
 
 </body>
+
 </html>
