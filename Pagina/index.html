@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Loyasglass LLC provides high-quality glass, aluminum, and shower door solutions in Brighton, Colorado.">
+  <meta name="keywords" content="glass, shower doors, aluminum, Brighton, Colorado, Loyasglass">
+  <meta name="author" content="Loyasglass LLC">
   <title>Loyasglass LLC</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
   <style>
     * {
       margin: 0;
@@ -39,7 +44,7 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      animation: fadeZoom 2.5s ease forwards;
+      animation: fadeZoom 1.5s ease forwards;
     }
 
     #splash img {
@@ -74,7 +79,8 @@
 
     /* HEADER */
     header {
-      background-color: #fdfdfd;
+      background-color: rgba(253, 253, 253, 0.9);
+      backdrop-filter: blur(5px);
       color: #222;
       padding: 0.8rem 1.5rem;
       position: fixed;
@@ -96,6 +102,19 @@
       margin-right: 0.8rem;
     }
 
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #222;
+    }
+
+    .nav-menu {
+      display: flex;
+    }
+
     nav a {
       color: #222;
       text-decoration: none;
@@ -106,10 +125,16 @@
       transition: background 0.3s, color 0.3s, transform 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       background: #0c2340;
       color: #fff;
       transform: translateY(-2px);
+    }
+
+    nav a:focus {
+      outline: 2px solid #0077b6;
+      outline-offset: 2px;
     }
 
     /* HERO */
@@ -163,6 +188,21 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     }
 
+    .cta-button {
+      display: inline-block;
+      background: #0077b6;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #005f8c;
+    }
+
     /* HIGHLIGHTS */
     .highlights {
       display: flex;
@@ -171,23 +211,25 @@
       margin-top: -2.5rem;
       position: relative;
       z-index: 3;
+      padding: 1rem;
     }
 
     .highlight-item {
-      background: #fff;
+      background: #f9f9f9;
       padding: 1rem;
       border-radius: 14px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e0e0;
       text-align: center;
       width: 220px;
       animation: fadeUp 1s ease forwards;
       opacity: 0;
     }
 
-    .highlight-item img {
-      width: 55px;
-      height: 55px;
-      object-fit: contain;
+    .highlight-item i {
+      font-size: 2.5rem;
+      color: #0077b6;
+      margin-bottom: 0.5rem;
     }
 
     .highlight-item h3 {
@@ -241,7 +283,7 @@
       }
     }
 
-    /* ABOUT & SERVICES estilo galería */
+    /* ABOUT & SERVICES */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -263,17 +305,18 @@
 
     .info-card img {
       width: 100%;
-      height: 160px;
+      height: 200px;
       object-fit: cover;
+      loading: lazy;
     }
 
     .info-card .content {
-      padding: 1rem;
+      padding: 1.5rem;
     }
 
     .info-card h3 {
       margin-bottom: 0.5rem;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: #0c2340;
     }
 
@@ -304,19 +347,20 @@
 
     .product-card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
+      loading: lazy;
     }
 
     .product-card .content {
-      padding: 1rem;
+      padding: 1.5rem;
       background: #0c2340;
       color: white;
     }
 
     .product-card h3 {
       margin-bottom: 0.8rem;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       border-bottom: 2px solid #25d366;
       display: inline-block;
       padding-bottom: 0.3rem;
@@ -326,6 +370,20 @@
       font-size: 0.9rem;
       line-height: 1.5;
       color: #f4f4f4;
+    }
+
+    .card-button {
+      display: inline-block;
+      background: #0077b6;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .card-button:hover {
+      background: #005f8c;
     }
 
     /* GALLERY */
@@ -345,9 +403,10 @@
 
     .image-box img {
       width: 100%;
-      height: 200px;
+      height: 150px;
       object-fit: cover;
       transition: transform 0.3s ease;
+      loading: lazy;
     }
 
     .image-box:hover {
@@ -358,14 +417,7 @@
       transform: scale(1.1);
     }
 
-    iframe {
-      border-radius: 8px;
-      width: 100%;
-      height: 300px;
-      border: 0;
-    }
-
-    /* CONTACTO */
+    /* CONTACT */
     .contact-container {
       display: flex;
       flex-wrap: wrap;
@@ -394,8 +446,13 @@
       font-size: 1rem;
     }
 
+    .contact-form input:invalid,
+    .contact-form textarea:invalid {
+      border-color: #ff4d4d;
+    }
+
     .contact-form button {
-      background: #25d366;
+      background: #0077b6;
       color: white;
       padding: 0.8rem 1.5rem;
       border: none;
@@ -405,13 +462,22 @@
     }
 
     .contact-form button:hover {
-      background: #128c4a;
+      background: #005f8c;
     }
 
     .contact-info p {
       margin-bottom: 0.5rem;
     }
 
+    iframe {
+      border-radius: 8px;
+      width: 100%;
+      height: 300px;
+      border: 0;
+      loading: lazy;
+    }
+
+    /* FOOTER */
     footer {
       background: #000;
       color: #fff;
@@ -420,7 +486,23 @@
       border-radius: 12px;
     }
 
-    /* BOTONES FLOTANTES */
+    .footer-links,
+    .social-links {
+      margin-top: 1rem;
+    }
+
+    .footer-links a,
+    .social-links a {
+      color: #fff;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    .social-links i {
+      font-size: 1.5rem;
+    }
+
+    /* FLOATING BUTTONS */
     .whatsapp-container,
     .facebook-container {
       position: fixed;
@@ -473,13 +555,40 @@
       box-shadow: 0 0 20px #1877f2;
     }
 
+    /* MOBILE STYLES */
     @media (max-width: 768px) {
-      .highlights {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
         flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fdfdfd;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-menu.active {
+        display: flex;
       }
 
       nav a {
         margin: 0.5rem;
+      }
+
+      .highlights {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .highlight-item {
+        width: 100%;
+        max-width: 300px;
       }
 
       .hero h2 {
@@ -490,23 +599,31 @@
         font-size: 1rem;
       }
 
-      .product-card img {
+      .hero video {
+        display: none;
+      }
+
+      .hero {
+        background: url('fondo.jpeg') no-repeat center/cover;
+      }
+
+      .product-card img,
+      .info-card img {
         height: 150px;
       }
 
       .image-box img {
-        height: 160px;
+        height: 150px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <!-- Splash Screen -->
-  <div id="splash">
+  <div id="splash" role="dialog" aria-label="Loading Loyasglass LLC">
     <div class="splash-content">
-      <img src="logoLLC.png" alt="Logo Loyasglass">
+      <img src="logoLLC.png" alt="Loyasglass LLC Logo">
       <h1>LOYASGLASS LLC</h1>
     </div>
   </div>
@@ -514,10 +631,11 @@
   <!-- HEADER -->
   <header>
     <div style="display: flex; align-items: center;">
-      <img src="logoLLC.png" alt="Logo Loyasglass" />
+      <img src="logoLLC.png" alt="Loyasglass LLC Logo">
       <h1>Loyasglass LLC</h1>
     </div>
-    <nav>
+    <button class="hamburger" aria-label="Toggle navigation">☰</button>
+    <nav class="nav-menu">
       <a href="#about"><strong>About Us</strong></a>
       <a href="#services"><strong>Services</strong></a>
       <a href="#products"><strong>Products</strong></a>
@@ -526,187 +644,236 @@
     </nav>
   </header>
 
-  <!-- HERO con VIDEO -->
-  <section class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="WhatsApp Video 2025-09-14 at 12.38.02 AM (1).mp4" type="video/mp4">
-      Tu navegador no soporta video HTML5.
-    </video>
-    <div class="hero-overlay">
-      <h2>Loyasglass LLC</h2>
-      <p>Venta de vidrio, aluminio, accesorios y mucho más!</p>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <picture>
+        <source media="(max-width: 768px)" srcset="fondo.jpeg">
+        <img src="fondo.jpeg" alt="Loyasglass LLC Hero Background" loading="lazy">
+      </picture>
+      <video autoplay muted loop playsinline loading="lazy" poster="fondo.jpeg">
+        <source src="WhatsApp Video 2025-09-14 at 12.38.02 AM (1).mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="hero-overlay">
+        <h2>Loyasglass LLC</h2>
+        <p>Glass, aluminum, accessories, and more!</p>
+        <a href="#contact" class="cta-button">Get a Quote</a>
+      </div>
+    </section>
 
-  <!-- HIGHLIGHTS -->
-  <section class="highlights">
-    <div class="highlight-item">
-      <img src="icono1.png" alt="Creative Design">
-      <h3>Creative Design</h3>
-    </div>
-    <div class="highlight-item">
-      <img src="icono2.png" alt="Fast Execution">
-      <h3>Fast Execution</h3>
-    </div>
-    <div class="highlight-item">
-      <img src="icono3.png" alt="Great Guarantee">
-      <h3>Great Guarantee</h3>
-    </div>
-  </section>
+    <!-- HIGHLIGHTS -->
+    <section class="highlights">
+      <div class="highlight-item">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Creative Design</h3>
+      </div>
+      <div class="highlight-item">
+        <i class="fas fa-rocket"></i>
+        <h3>Fast Execution</h3>
+      </div>
+      <div class="highlight-item">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Great Guarantee</h3>
+      </div>
+    </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Us</h2>
-    <div class="card-grid">
-      <div class="info-card">
-        <img src="foto1.jpg" alt="About Us">
-        <div class="content">
-          <h3>Our Mission</h3>
-          <p>Loyasglass LLC is dedicated to providing high-quality glass solutions for commercial and residential needs.
-          </p>
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="card-grid">
+        <div class="info-card">
+          <img src="foto1.jpg" alt="Our Mission">
+          <div class="content">
+            <h3>Our Mission</h3>
+            <p>Loyasglass LLC is dedicated to providing high-quality glass solutions for commercial and residential
+              needs.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <img src="foto2.jpg" alt="Shower Doors Installation">
+          <div class="content">
+            <h3>Shower Doors</h3>
+            <p>We specialize in the installation and maintenance of premium shower doors in Colorado.</p>
+          </div>
         </div>
       </div>
-      <div class="info-card">
-        <img src="foto2.jpg" alt="Shower Doors">
-        <div class="content">
-          <h3>Shower Doors</h3>
-          <p>We specialize in the installation and maintenance of premium shower doors in Colorado.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="card-grid">
-      <div class="info-card">
-        <img src="foto3.jpg" alt="Custom Glass">
-        <div class="content">
-          <h3>Custom Glass</h3>
-          <p>Tailored glass manufacturing for all kinds of projects.</p>
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="card-grid">
+        <div class="info-card">
+          <img src="foto3.jpg" alt="Custom Glass Manufacturing">
+          <div class="content">
+            <h3>Custom Glass</h3>
+            <p>Tailored glass manufacturing for all kinds of projects.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <img src="foto4.jpg" alt="Residential Glass Installation">
+          <div class="content">
+            <h3>Residential</h3>
+            <p>Glass installation services for residential homes.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <img src="foto1.jpg" alt="Commercial Glass Projects">
+          <div class="content">
+            <h3>Commercial</h3>
+            <p>Storefronts, offices, and large-scale projects.</p>
+          </div>
         </div>
       </div>
-      <div class="info-card">
-        <img src="foto4.jpg" alt="Residential">
-        <div class="content">
-          <h3>Residential</h3>
-          <p>Glass installation services for residential homes.</p>
-        </div>
-      </div>
-      <div class="info-card">
-        <img src="foto1.jpg" alt="Commercial">
-        <div class="content">
-          <h3>Commercial</h3>
-          <p>Storefronts, offices, and large-scale projects.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PRODUCTS -->
-  <section id="products">
-    <h2>Our Products</h2>
-    <div class="products">
-      <div class="product-card">
-        <img src="fondo.jpeg" alt="Vidrio">
-        <div class="content">
-          <h3>VIDRIO</h3>
-          <p>Aquí encontrará la mejor selección de vidrio flotado en sus diferentes colores y espesores como, claro,
-            gris, verde, satinado, vidrios opacos en sus diferentes figuras, además de vidrios reflectivos, de control
-            solar y templado.</p>
+    <!-- PRODUCTS -->
+    <section id="products">
+      <h2>Our Products</h2>
+      <div class="products">
+        <div class="product-card">
+          <img src="fondo.jpeg" alt="Glass Products">
+          <div class="content">
+            <h3>GLASS</h3>
+            <p>Discover the best selection of float glass in various colors and thicknesses, including clear, gray,
+              green, frosted, patterned opaque glass, reflective glass, solar control glass, and tempered glass.</p>
+            <a href="#contact" class="card-button">Learn More</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="fondo3.png" alt="Aluminum Profiles">
+          <div class="content">
+            <h3>ALUMINUM</h3>
+            <p>Wide variety of aluminum profiles: Standard, National, and Spanish lines. Architectural lines in 1.5, 2,
+              and 3 inches. Windows, sliding doors, shower enclosures, and display cases.</p>
+            <a href="#contact" class="card-button">Learn More</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="instalacion.jpg" alt="Hardware and Accessories">
+          <div class="content">
+            <h3>HARDWARE</h3>
+            <p>A wide range of hardware and accessories for aluminum installation. Hinges, rollers, handles, locks, and
+              silicones. Plus polycarbonates, acrylics, plastics, and hardware for tempered glass.</p>
+            <a href="#contact" class="card-button">Learn More</a>
+          </div>
         </div>
       </div>
-      <div class="product-card">
-        <img src="fondo3.png" alt="Aluminio">
-        <div class="content">
-          <h3>ALUMINIO</h3>
-          <p>Gran variedad en perfiles de aluminio: Standard, Línea Nacional y Línea española. Líneas arquitectónicas en
-            1 1/2, 2 y 3 pulgadas. Ventanas, puertas corredizas, canceles de baño y vitrinas.</p>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>Project Gallery</h2>
+      <div class="image-grid">
+        <div class="image-box">
+          <a href="foto1.jpg" data-lightbox="gallery" data-title="Custom Shower Door Installation">
+            <img src="foto1.jpg" alt="Custom Shower Door Installation">
+          </a>
+        </div>
+        <div class="image-box">
+          <a href="foto2.jpg" data-lightbox="gallery" data-title="Residential Glass Project">
+            <img src="foto2.jpg" alt="Residential Glass Project">
+          </a>
+        </div>
+        <div class="image-box">
+          <a href="foto3.jpg" data-lightbox="gallery" data-title="Commercial Storefront">
+            <img src="foto3.jpg" alt="Commercial Storefront">
+          </a>
+        </div>
+        <div class="image-box">
+          <a href="foto4.jpg" data-lightbox="gallery" data-title="Custom Glass Installation">
+            <img src="foto4.jpg" alt="Custom Glass Installation">
+          </a>
         </div>
       </div>
-      <div class="product-card">
-        <img src="instalacion.jpg" alt="Herrajes">
-        <div class="content">
-          <h3>HERRAJES</h3>
-          <p>Una amplia gama de herrajes y accesorios para la instalación de aluminio. Bisagras, carretillas, jaladeras,
-            chapas, silicones. Además de policarbonatos, acrílicos, plásticos y herrajes para cristal templado.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact Information</h2>
+      <div class="contact-container">
+        <div class="contact-form">
+          <form id="contact-form">
+            <label for="name">Name: *</label>
+            <input type="text" id="name" required>
+            <label for="last-name">Last Name: *</label>
+            <input type="text" id="last-name" required>
+            <label for="email">Email: *</label>
+            <input type="email" id="email" required>
+            <label for="phone">Phone: *</label>
+            <input type="tel" id="phone" required>
+            <label for="message">Message: *</label>
+            <textarea id="message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>Contact Details</h3>
+          <p><strong>Address:</strong> Brighton, Colorado 80601</p>
+          <p><strong>Phone:</strong> <a href="tel:+13035476936">(303) 547-6936</a></p>
+          <p><strong>Email:</strong> <a href="mailto:loyasglass24@yahoo.com">loyasglass24@yahoo.com</a></p>
+          <br>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.986143933902!2d-104.82052098461944!3d39.98642797942109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c798e0b4a8c9b%3A0x2a9b40b7e30d4e23!2sBrighton%2C%20CO%2080601%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1699999999999"
+            loading="lazy"></iframe>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <h2>Project Gallery</h2>
-    <div class="image-grid">
-      <div class="image-box"><img src="foto1.jpg" alt="Project 1"></div>
-      <div class="image-box"><img src="foto2.jpg" alt="Project 2"></div>
-      <div class="image-box"><img src="foto3.jpg" alt="Project 3"></div>
-      <div class="image-box"><img src="foto4.jpg" alt="Project 4"></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Información de Contacto</h2>
-    <div class="contact-container">
-      <div class="contact-form">
-        <form>
-          <label>Nombre: *</label>
-          <input type="text" required>
-          <label>Apellidos: *</label>
-          <input type="text" required>
-          <label>Email: *</label>
-          <input type="email" required>
-          <label>Teléfono: *</label>
-          <input type="tel" required>
-          <label>Mensaje: *</label>
-          <textarea rows="5" required></textarea>
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-
-      <div class="contact-info">
-        <h3>Datos de contacto</h3>
-        <p><strong>Dirección:</strong> Brighton, Colorado 80601</p>
-        <p><strong>Tel:</strong> <a href="tel:+13035476936">(303) 547 6936</a></p>
-        <p><strong>Email:</strong> <a href="mailto:loyasglass24@yahoo.com">loyasglass24@yahoo.com</a></p>
-        <br>
-        <!-- Mapa con ubicación exacta -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.986143933902!2d-104.82052098461944!3d39.98642797942109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c798e0b4a8c9b%3A0x2a9b40b7e30d4e23!2sBrighton%2C%20CO%2080601%2C%20EE.%20UU.!5e0!3m2!1ses-419!2smx!4v1699999999999"></iframe>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Loyasglass LLC. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Loyasglass LLC. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#about">About Us</a> |
+      <a href="#services">Services</a> |
+      <a href="#products">Products</a> |
+      <a href="#gallery">Gallery</a> |
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/LoyasGlass/" target="_blank" aria-label="Facebook"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/13035476936" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </footer>
 
-  <!-- BOTONES FLOTANTES -->
+  <!-- FLOATING BUTTONS -->
   <div class="whatsapp-container">
-    <a href="https://wa.me/13035476936?text=Hola,%20¿en%20qué%20te%20puedo%20ayudar?" target="_blank"
-      class="whatsapp-float" aria-label="Chat en WhatsApp">
+    <a href="https://wa.me/13035476936?text=Hello,%20how%20can%20we%20help%20you?" target="_blank"
+      class="whatsapp-float" aria-label="Chat on WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
-
   <div class="facebook-container">
     <a href="https://www.facebook.com/LoyasGlass/" target="_blank" class="facebook-float" aria-label="Facebook">
       <i class="fab fa-facebook-f"></i>
     </a>
   </div>
 
-  <!-- SCRIPT SPLASH -->
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
+    // Splash Screen
     window.addEventListener("load", () => {
       const splash = document.getElementById("splash");
-      setTimeout(() => { splash.classList.add("hidden"); }, 2500);
+      setTimeout(() => { splash.classList.add("hidden"); }, 1500);
+    });
+
+    // Hamburger Menu
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-menu').classList.toggle('active');
+    });
+
+    // Contact Form Validation
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      e.target.reset();
     });
   </script>
-
 </body>
 
 </html>
