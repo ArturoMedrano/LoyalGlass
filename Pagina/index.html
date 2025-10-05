@@ -155,6 +155,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      min-width: 100%;
+      min-height: 100%;
       z-index: 0;
     }
 
@@ -165,7 +167,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(153, 146, 123, 0.639);
+      /* Adjusted opacity for better readability */
       z-index: 1;
     }
 
@@ -180,12 +183,18 @@
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.3);
+      /* Added background for readability */
+      padding: 0.5rem;
     }
 
     .hero p {
       font-size: 1.5rem;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.3);
+      /* Added background for readability */
+      padding: 0.3rem;
     }
 
     .cta-button {
@@ -201,6 +210,32 @@
 
     .cta-button:hover {
       background: #005f8c;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        height: 80vh;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     /* HIGHLIGHTS */
@@ -535,6 +570,28 @@
       loading: lazy;
     }
 
+    .highlights {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+      background-color: #f8f9fa;
+    }
+
+    .highlight-item {
+      text-align: center;
+    }
+
+    .highlight-icon {
+      width: 80px;
+      /* ajusta el tamaño según necesites */
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+
+
+
     /* FOOTER */
     footer {
       background: #000;
@@ -703,14 +760,9 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
-      <picture>
-        <source media="(max-width: 768px)" srcset="fondo.jpeg">
-        <img src="fondo.jpeg" alt="Loyasglass LLC Hero Background" loading="lazy">
-      </picture>
       <video autoplay muted loop playsinline loading="lazy" poster="fondo.jpeg">
-        <source src="WhatsApp Video 2025-09-14 at 12.38.02 AM (1).mp4" type="video/mp4">
+        <source src="video1.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
       <div class="hero-overlay">
@@ -723,18 +775,21 @@
     <!-- HIGHLIGHTS -->
     <section class="highlights">
       <div class="highlight-item">
-        <i class="fas fa-paint-brush"></i>
+        <img src="src/icono1.png" alt="Creative Design" class="highlight-icon">
         <h3>Creative Design</h3>
       </div>
+
       <div class="highlight-item">
-        <i class="fas fa-rocket"></i>
+        <img src="src/icono2.png" alt="Fast Execution" class="highlight-icon">
         <h3>Fast Execution</h3>
       </div>
+
       <div class="highlight-item">
-        <i class="fas fa-shield-alt"></i>
+        <img src="src/icono3.png" alt="Great Guarantee" class="highlight-icon">
         <h3>Great Guarantee</h3>
       </div>
     </section>
+
 
     <!-- ABOUT -->
     <section id="about">
