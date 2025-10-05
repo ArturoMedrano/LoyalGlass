@@ -386,35 +386,93 @@
       background: #005f8c;
     }
 
-    /* GALLERY */
+    /* GALERÍA DE IMÁGENES */
     .image-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      /* Aumentado el ancho mínimo a 320px para imágenes más grandes */
+      gap: 2rem;
+      /* Aumentado el espacio entre imágenes para mejor visualización */
+      margin-top: 2rem;
+      /* Más espacio superior para mejor presentación */
+      max-width: 1400px;
+      /* Aumentado el ancho máximo para pantallas grandes */
+      margin-left: auto;
+      /* Centra la cuadrícula horizontalmente */
+      margin-right: auto;
+      /* Centra la cuadrícula horizontalmente */
+      padding: 0 1rem;
+      /* Añadido padding lateral para evitar que las imágenes toquen los bordes */
     }
 
+    /* Contenedor de cada imagen */
     .image-box {
       overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      /* Bordes redondeados para un look moderno */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      /* Sombra más pronunciada para dar profundidad */
       transition: transform 0.3s ease;
+      /* Transición suave al hacer hover */
     }
 
+    /* Estilo de las imágenes dentro del contenedor */
     .image-box img {
       width: 100%;
-      height: 150px;
+      height: 400px;
+      /* Altura aumentada para adaptarse a imágenes verticales de celular */
       object-fit: cover;
+      /* Asegura que la imagen cubra el contenedor sin deformarse */
+      object-position: center;
+      /* Centra la imagen para evitar cortes indeseados */
       transition: transform 0.3s ease;
+      /* Transición suave al hacer hover */
       loading: lazy;
+      /* Carga diferida para mejorar rendimiento */
     }
 
+    /* Efecto al pasar el ratón por encima */
     .image-box:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
+      /* Aumentado el escalado para un efecto más notorio */
     }
 
+    /* Efecto de zoom en la imagen al hacer hover */
     .image-box:hover img {
-      transform: scale(1.1);
+      transform: scale(1.15);
+      /* Aumentado el zoom para destacar la imagen */
+    }
+
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 768px) {
+      .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* Ancho mínimo reducido para móviles */
+        gap: 1.5rem;
+        /* Espacio reducido para mejor ajuste en pantallas pequeñas */
+        padding: 0 0.5rem;
+        /* Padding más pequeño en móviles */
+      }
+
+      .image-box img {
+        height: 350px;
+        /* Altura ajustada para imágenes verticales en móviles */
+      }
+    }
+
+    /* Ajustes para pantallas muy pequeñas (menos de 480px) */
+    @media (max-width: 480px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+        /* Una sola columna para pantallas muy pequeñas */
+        gap: 1rem;
+        /* Espacio aún más reducido */
+      }
+
+      .image-box img {
+        height: 300px;
+        /* Altura reducida para mejor proporción en pantallas pequeñas */
+      }
     }
 
     /* CONTACT */
@@ -621,18 +679,18 @@
 
 <body>
   <!-- Splash Screen -->
-  <div id="splash" role="dialog" aria-label="Loading Loyasglass LLC">
+  <div id="splash" role="dialog" aria-label="Loading Loyas Glass LLC">
     <div class="splash-content">
       <img src="logoLLC.png" alt="Loyasglass LLC Logo">
-      <h1>LOYASGLASS LLC</h1>
+      <h1>LOYAS GLASS LLC</h1>
     </div>
   </div>
 
   <!-- HEADER -->
   <header>
     <div style="display: flex; align-items: center;">
-      <img src="logoLLC.png" alt="Loyasglass LLC Logo">
-      <h1>Loyasglass LLC</h1>
+      <img src="logoLLC.png" alt="Loyas Glass LLC Logo">
+      <h1>Loyas Glass LLC</h1>
     </div>
     <button class="hamburger" aria-label="Toggle navigation">☰</button>
     <nav class="nav-menu">
@@ -705,7 +763,7 @@
       <h2>Our Services</h2>
       <div class="card-grid">
         <div class="info-card">
-          <img src="foto3.jpg" alt="Custom Glass Manufacturing">
+          <img src="src/imag8.jpg" alt="Custom Glass Manufacturing">
           <div class="content">
             <h3>Custom Glass</h3>
             <p>Tailored glass manufacturing for all kinds of projects.</p>
@@ -777,8 +835,8 @@
           </a>
         </div>
         <div class="image-box">
-          <a href="foto3.jpg" data-lightbox="gallery" data-title="Commercial Storefront">
-            <img src="foto3.jpg" alt="Commercial Storefront">
+          <a href="src/imag8.jpg" data-lightbox="gallery" data-title="Commercial Storefront">
+            <img src="src/imag8.jpg" alt="Commercial Storefront">
           </a>
         </div>
         <div class="image-box">
@@ -786,8 +844,36 @@
             <img src="foto4.jpg" alt="Custom Glass Installation">
           </a>
         </div>
+        <div class="image-box">
+          <a href="src/imag1.jpg" data-lightbox="gallery" data-title="Modern Glass Installation">
+            <img src="src/imag1.jpg" alt="Modern Glass Installation" loading="lazy">
+          </a>
+        </div>
+        <div class="image-box">
+          <a href="src/imag2.jpg" data-lightbox="gallery" data-title="Custom Aluminum Frame">
+            <img src="src/imag2.jpg" alt="Custom Aluminum Frame" loading="lazy">
+          </a>
+        </div>
+        <div class="image-box">
+          <a href="src/imag4.jpg" data-lightbox="gallery" data-title="Modern Glass Installation">
+            <img src="src/imag4.jpg" alt="Modern Glass Installation" loading="lazy">
+          </a>
+        </div>
+        <div class="image-box">
+          <a href="src/imag5.jpg" data-lightbox="gallery" data-title="Custom Aluminum Frame">
+            <img src="src/imag5.jpg" alt="Custom Aluminum Frame" loading="lazy">
+          </a>
+        </div>
+        <div class="image-box">
+          <a href="src/imag7.jpg" data-lightbox="gallery" data-title="Custom Aluminum Frame">
+            <img src="src/imag7.jpg" alt="Custom Aluminum Frame" loading="lazy">
+          </a>
+        </div>
       </div>
     </section>
+
+
+
 
     <!-- CONTACT -->
     <section id="contact">
