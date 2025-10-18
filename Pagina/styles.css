@@ -178,7 +178,7 @@ nav a:focus {
   background: #005f8c;
 }
 
-/* Responsive Design */
+/* Responsive Design for Hero */
 @media (max-width: 768px) {
   .hero {
     height: 60vh;
@@ -212,75 +212,166 @@ nav a:focus {
   }
 }
 
-/* HIGHLIGHTS */
-.highlights {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: -2.5rem;
-  position: relative;
-  z-index: 3;
-  padding: 1rem;
-}
-
-.highlight-item {
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
-  text-align: center;
-  width: 220px;
-  animation: fadeUp 1s ease forwards;
-  opacity: 0;
-}
-
-.highlight-item i {
-  font-size: 2.5rem;
-  color: #0077b6;
-  margin-bottom: 0.5rem;
-}
-
-.highlight-item h3 {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-}
-
-@keyframes fadeUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.highlight-item:nth-child(1) {
-  animation-delay: 0.3s;
-}
-
-.highlight-item:nth-child(2) {
-  animation-delay: 0.6s;
-}
-
-.highlight-item:nth-child(3) {
-  animation-delay: 0.9s;
-}
-
+/* GENERAL SECTION STYLES (MODIFIED: Increased padding and margin for more space between sections) */
 section {
-  padding: 3rem 5%;
+  padding: 5rem 5%; /* MODIFICADO: Increased padding from 3rem to 5rem for more internal space. */
   max-width: none;
-  margin: 2rem 0;
+  margin: 4rem 0; /* MODIFICADO: Increased margin from 2rem to 4rem for more space between sections. */
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   animation: fadeIn 1.5s ease;
 }
 
-/* ABOUT & SERVICES */
+/* SECTION TITLES (MODIFIED: Larger font size for h2 titles in sections) */
+section h2 {
+  font-size: 4rem; /* MODIFICADO: Increased from ~3.5rem to 4rem for larger titles. */
+  font-weight: 700;
+  margin-bottom: 2.5rem; /* MODIFICADO: Added more bottom margin for better spacing below titles. */
+  line-height: 1.2;
+  text-align: center;
+  color: #0c2340;
+}
+
+/* ABOUT SECTION (Updated with integrated highlights on the right) */
+#about {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(0, 119, 182, 0.8), rgba(0, 0, 128, 0.8)), url('foto1.jpg') no-repeat center/cover;
+  background-color: transparent;
+  box-shadow: none;
+  color: #fff;
+  padding: 0;
+  margin-top: 120px; /* Existing margin-top for header separation. */
+  border-radius: 0;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 90%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-highlights {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 50%;
+}
+
+#about h2 {
+  font-size: 3.5rem; /* Override for about specific if needed, but now using general section h2. */
+  font-weight: 700; /* Ya estaba en negritas (bold). */
+  color: #fff; /* MODIFICADO: Agregado color blanco para que destaque sobre el fondo. */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+#about h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+#about p {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+/* HIGHLIGHT ITEMS (Adapted for About Us - now white background) */
+.highlight-item {
+  background: rgba(255, 255, 255, 0.95); /* Existing white semi-transparent. */
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.highlight-item h3 {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive for About Section */
+@media (max-width: 768px) {
+  #about {
+    height: 80vh;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .about-text,
+  .about-highlights {
+    max-width: 100%;
+  }
+
+  .about-highlights {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #about h2 {
+    font-size: 2.5rem;
+    color: #fff; /* MODIFICADO: Mantiene el color blanco en móviles. */
+  }
+
+  #about h3 {
+    font-size: 1.2rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+
+  .highlight-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .highlight-item h3 {
+    font-size: 0.8rem;
+  }
+}
+
+/* SERVICES */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -304,7 +395,6 @@ section {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  loading: lazy;
 }
 
 .info-card .content {
@@ -346,7 +436,6 @@ section {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  loading: lazy;
 }
 
 .product-card .content {
@@ -383,19 +472,14 @@ section {
   background: #005f8c;
 }
 
-/* GALERÍA DE IMÁGENES - Pinterest-like Masonry Layout */
+/* GALLERY */
 .image-grid {
   columns: 3;
   column-gap: 1.5rem;
   column-fill: balance;
   margin-top: 2rem;
-  max-width: none;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
 }
 
-/* Contenedor de cada imagen */
 .image-box {
   break-inside: avoid;
   margin-bottom: 1.5rem;
@@ -403,75 +487,49 @@ section {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
-  display: block;
-  width: 100%;
 }
 
-/* Estilo de las imágenes dentro del contenedor */
 .image-box img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: center;
   transition: transform 0.3s ease;
-  display: block;
-  loading: lazy;
 }
 
-/* Efecto al pasar el ratón por encima */
 .image-box:hover {
   transform: scale(1.02);
 }
 
-/* Efecto de zoom en la imagen al hacer hover */
 .image-box:hover img {
   transform: scale(1.1);
 }
 
-/* Ajustes para dispositivos móviles */
 @media (max-width: 768px) {
   .image-grid {
     columns: 2;
-    column-gap: 1rem;
-  }
-
-  .image-box {
-    margin-bottom: 1rem;
   }
 }
 
-/* Ajustes para pantallas muy pequeñas (menos de 480px) */
 @media (max-width: 480px) {
   .image-grid {
     columns: 1;
-    column-gap: 0;
-  }
-
-  .image-box {
-    margin-bottom: 1rem;
   }
 }
 
-/* Lightbox Custom Styles for Close Button */
+/* Lightbox Custom Styles */
 #lightbox {
   z-index: 9999 !important;
 }
 
 .lb-close {
-  display: block !important;
   background: rgba(0, 0, 0, 0.9) !important;
   color: #fff !important;
   font-size: 28px !important;
-  line-height: 1 !important;
   width: 50px !important;
   height: 50px !important;
   border-radius: 50% !important;
-  position: absolute !important;
   top: 20px !important;
   right: 20px !important;
-  text-align: center !important;
-  cursor: pointer !important;
-  z-index: 10000 !important;
   transition: background 0.3s ease !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
   border: 2px solid rgba(255, 255, 255, 0.3) !important;
@@ -482,16 +540,17 @@ section {
   transform: scale(1.1) !important;
 }
 
-.lb-outerContainer {
-  border-radius: 8px !important;
+@media (max-width: 768px) {
+  .lb-close {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 24px !important;
+    top: 15px !important;
+    right: 15px !important;
+  }
 }
 
-/* Ensure overlay is clickable */
-#lightboxOverlay {
-  cursor: pointer !important;
-}
-
-/* CONTACT */
+/* CONTACT (MODIFIED: Blue background for contact-info/map area) */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
@@ -502,10 +561,17 @@ section {
 .contact-info {
   flex: 1;
   min-width: 300px;
-  background: #f9f9f9;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  background: #f9f9f9; /* Kept light for form. */
+}
+
+.contact-info {
+  background: rgba(0, 119, 182, 0.1); /* MODIFICADO: Light blue tint similar to site blues (using rgba from #0077b6 with 10% opacity for subtlety; map visible underneath). If you want darker, use rgba(0, 119, 182, 0.2). */
 }
 
 .contact-form label {
@@ -577,26 +643,7 @@ iframe {
   width: 100%;
   height: 300px;
   border: 0;
-  loading: lazy;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.highlights {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px 0;
-  background-color: #f8f9fa;
-}
-
-.highlight-item {
-  text-align: center;
-}
-
-.highlight-icon {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
 }
 
 /* FOOTER */
@@ -703,47 +750,19 @@ footer {
     margin: 0.5rem;
   }
 
-  .highlights {
-    flex-direction: column;
-    gap: 1rem;
+  /* Mobile adjustments for sections and titles */
+  section {
+    padding: 3rem 2%; /* Reduced padding on mobile for better fit. */
+    margin: 2.5rem 0; /* Slightly reduced margin on mobile. */
   }
 
-  .highlight-item {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero video {
-    display: none;
-  }
-
-  .hero {
-    background: url('fondo.jpeg') no-repeat center/cover;
+  section h2 {
+    font-size: 2.8rem; /* Smaller but still larger than original on mobile. */
+    margin-bottom: 2rem;
   }
 
   .product-card img,
   .info-card img {
     height: 150px;
-  }
-
-  section {
-    padding: 3rem 2%;
-  }
-
-  /* Lightbox mobile adjustments */
-  .lb-close {
-    width: 45px !important;
-    height: 45px !important;
-    font-size: 24px !important;
-    top: 15px !important;
-    right: 15px !important;
   }
 }
