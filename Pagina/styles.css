@@ -58,7 +58,7 @@ body {
 
   to {
     opacity: 1;
-    transform: scale(3);
+    transform: scale(1);
   }
 }
 
@@ -212,43 +212,54 @@ nav a:focus {
   }
 }
 
-/* GENERAL SECTION STYLES (MODIFIED: Increased padding and margin for more space between sections) */
+/* GENERAL SECTION STYLES */
 section {
-  padding: 5rem 5%; /* MODIFICADO: Increased padding from 3rem to 5rem for more internal space. */
+  padding: 5rem 5%;
   max-width: none;
-  margin: 4rem 0; /* MODIFICADO: Increased margin from 2rem to 4rem for more space between sections. */
+  margin: 4rem 0;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   animation: fadeIn 1.5s ease;
 }
 
-/* SECTION TITLES (MODIFIED: Larger font size for h2 titles in sections) */
+/* SECTION TITLES */
 section h2 {
-  font-size: 4rem; /* MODIFICADO: Increased from ~3.5rem to 4rem for larger titles. */
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 2.5rem; /* MODIFICADO: Added more bottom margin for better spacing below titles. */
+  margin-bottom: 2.5rem;
   line-height: 1.2;
   text-align: center;
   color: #0c2340;
 }
 
-/* ABOUT SECTION (Updated with integrated highlights on the right) */
+/* ABOUT SECTION (Fixed: Added wrapper to contain overflow and adjusted widths/padding) */
 #about {
   position: relative;
-  height: 60vh;
+  height: 80vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   text-align: left;
-  overflow: hidden;
+  overflow: hidden; /* Keeps content within bounds. */
   background: linear-gradient(to bottom, rgba(0, 119, 182, 0.8), rgba(0, 0, 128, 0.8)), url('foto1.jpg') no-repeat center/cover;
   background-color: transparent;
   box-shadow: none;
   color: #fff;
   padding: 0;
-  margin-top: 120px; /* Existing margin-top for header separation. */
+  margin-top: 120px;
   border-radius: 0;
+  width: 100%; /* Ensures full width. */
+}
+
+.about-wrapper {
+  width: 95%; /* MODIFICADO: Wrapper limits content to 95% to prevent edge overflow. */
+  max-width: 1200px; /* MODIFICADO: Caps max width for large screens. */
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-content {
@@ -256,16 +267,14 @@ section h2 {
   z-index: 2;
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 90%;
-  margin: 0 auto;
+  gap: 1.5rem; /* MODIFICADO: Reduced gap to 1.5rem to save space. */
+  padding: 1.5rem; /* MODIFICADO: Reduced padding to 1.5rem. */
   width: 100%;
 }
 
 .about-text {
   flex: 1;
-  max-width: 50%;
+  max-width: 55%; /* MODIFICADO: Increased to 55% to give more space to text. */
 }
 
 .about-highlights {
@@ -273,15 +282,15 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 50%;
+  max-width: 40%; /* MODIFICADO: Reduced to 40% to prevent overflow on right. */
 }
 
 #about h2 {
-  font-size: 3.5rem; /* Override for about specific if needed, but now using general section h2. */
-  font-weight: 700; /* Ya estaba en negritas (bold). */
-  color: #fff; /* MODIFICADO: Agregado color blanco para que destaque sobre el fondo. */
+  font-size: 3.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: #fff;
 }
 
 #about h3 {
@@ -297,7 +306,7 @@ section h2 {
 
 /* HIGHLIGHT ITEMS (Adapted for About Us - now white background) */
 .highlight-item {
-  background: rgba(255, 255, 255, 0.95); /* Existing white semi-transparent. */
+  background: rgba(255, 255, 255, 0.95);
   padding: 1rem;
   border-radius: 12px;
   text-align: center;
@@ -326,16 +335,21 @@ section h2 {
 /* Responsive for About Section */
 @media (max-width: 768px) {
   #about {
-    height: 80vh;
-    justify-content: center;
+    height: 90vh; /* MODIFICADO: Increased for mobile to fit content. */
+    justify-content: flex-start;
     text-align: center;
     margin-top: 100px;
   }
 
+  .about-wrapper {
+    width: 95%;
+    max-width: none; /* Full width on mobile. */
+  }
+
   .about-content {
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: 1rem;
+    padding: 1rem;
   }
 
   .about-text,
@@ -350,7 +364,7 @@ section h2 {
 
   #about h2 {
     font-size: 2.5rem;
-    color: #fff; /* MODIFICADO: Mantiene el color blanco en móviles. */
+    color: #fff;
   }
 
   #about h3 {
@@ -550,7 +564,7 @@ section h2 {
   }
 }
 
-/* CONTACT (MODIFIED: Blue background for contact-info/map area) */
+/* CONTACT */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
@@ -561,17 +575,10 @@ section h2 {
 .contact-info {
   flex: 1;
   min-width: 300px;
+  background: #f9f9f9;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form {
-  background: #f9f9f9; /* Kept light for form. */
-}
-
-.contact-info {
-  background: rgba(0, 119, 182, 0.1); /* MODIFICADO: Light blue tint similar to site blues (using rgba from #0077b6 with 10% opacity for subtlety; map visible underneath). If you want darker, use rgba(0, 119, 182, 0.2). */
 }
 
 .contact-form label {
@@ -750,19 +757,12 @@ footer {
     margin: 0.5rem;
   }
 
-  /* Mobile adjustments for sections and titles */
-  section {
-    padding: 3rem 2%; /* Reduced padding on mobile for better fit. */
-    margin: 2.5rem 0; /* Slightly reduced margin on mobile. */
-  }
-
-  section h2 {
-    font-size: 2.8rem; /* Smaller but still larger than original on mobile. */
-    margin-bottom: 2rem;
-  }
-
   .product-card img,
   .info-card img {
     height: 150px;
+  }
+
+  section {
+    padding: 3rem 2%;
   }
 }
