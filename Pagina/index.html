@@ -24,11 +24,11 @@
     </div>
   </div>
 
-  <!-- HEADER -->
+  <!-- HEADER (Rediseñado: Más compacto como StartIT) -->
   <header>
-    <div style="display: flex; align-items: center;">
+    <div class="header-left">
       <img src="logoLLC.png" alt="Loyas Glass LLC Logo">
-      <h1></h1>
+      <h1>Loyasglass LLC</h1> <!-- Corregido: Nombre completo -->
     </div>
     <button class="hamburger" aria-label="Toggle navigation">☰</button>
     <nav class="nav-menu">
@@ -41,16 +41,25 @@
   </header>
 
   <main>
+    <!-- HERO (Actualizado: Imagen como fondo completo detrás del texto, con overlay blanco semi-transparente para legibilidad) -->
     <section class="hero">
-      <div class="hero-overlay">
-        <h2>Loyasglass LLC</h2>
-        <p>Glass Aluminum Accessories</p>
-        <p>and more!</p>
-        <a href="#contact" class="cta-button">Get a Quote</a>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>Transform your space</h2>
+          <p>Loyasglass LLC</p>
+          <p>Glass Aluminum Accessories</p>
+          <p>and more!</p>
+          <div class="hero-buttons">
+            <a href="#services" class="btn-secondary">Discover More</a>
+            <a href="#contact" class="cta-button">Get a Quote</a>
+          </div>
+        </div>
+        <!-- Div vacío para balance visual en el lado derecho -->
+        <div class="hero-spacer"></div>
       </div>
     </section>
 
-    <!-- ABOUT (Updated with integrated highlights/icons on the right - Fixed overflow) -->
+    <!-- ABOUT (sin cambios) -->
     <section id="about">
       <div class="about-wrapper">
         <div class="about-content">
@@ -80,7 +89,7 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES (sin cambios) -->
     <section id="services">
       <h2>Our Services</h2>
       <div class="card-grid">
@@ -99,7 +108,7 @@
           </div>
         </div>
         <div class="info-card">
-          <img src="foto1.jpg" alt="Commercial Glass Projects">
+          <img src="src/foto1.png">
           <div class="content">
             <h3>Commercial</h3>
             <p>Storefronts, offices, and large-scale projects.</p>
@@ -108,7 +117,7 @@
       </div>
     </section>
 
-    <!-- PRODUCTS -->
+    <!-- PRODUCTS (sin cambios) -->
     <section id="products">
       <h2>Our Products</h2>
       <div class="products">
@@ -142,7 +151,7 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (Corregido: data-lightbox consistente) -->
     <section id="gallery">
       <h2>Project Gallery</h2>
       <div class="image-grid">
@@ -194,7 +203,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT (Corregido: iframe en lugar de frame) -->
     <section id="contact">
       <h2>Contact Information</h2>
       <div class="contact-container">
@@ -228,7 +237,7 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (sin cambios) -->
   <footer>
     <p>&copy; 2025 Loyasglass LLC. All rights reserved.</p>
     <div class="footer-links">
@@ -245,7 +254,7 @@
     </div>
   </footer>
 
-  <!-- FLOATING BUTTONS -->
+  <!-- FLOATING BUTTONS (sin cambios) -->
   <div class="whatsapp-container">
     <a href="https://wa.me/13035476936?text=Hello,%20how%20can%20we%20help%20you?" target="_blank"
       class="whatsapp-float" aria-label="Chat on WhatsApp">
@@ -258,7 +267,7 @@
     </a>
   </div>
 
-  <!-- SCRIPTS -->
+  <!-- SCRIPTS (sin cambios) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
     // Splash Screen
