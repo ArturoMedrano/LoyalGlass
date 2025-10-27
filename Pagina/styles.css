@@ -433,6 +433,30 @@ section h2 {
 @media (max-width: 768px) { .image-grid { columns: 2; } }
 @media (max-width: 480px) { .image-grid { columns: 1; } }
 
+/* OUR VIDEOS */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.video-box {
+  background: #fdfdfd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-box:hover { transform: translateY(-5px); }
+
+.video-box video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* CONTACT - FORMULARIO SIN BORDES ROJOS AL CARGAR */
 .contact-container {
   display: flex;
@@ -592,6 +616,9 @@ footer {
   section { padding: 3rem 2%; }
   .hero { margin-top: 60px; }
   #about { background: linear-gradient(to bottom, rgba(0, 119, 182, 0.3), rgba(0, 0, 128, 0.3)), url('foto1.jpg') no-repeat center/cover; }
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @keyframes fadeIn {
