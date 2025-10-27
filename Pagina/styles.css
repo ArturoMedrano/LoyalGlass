@@ -134,12 +134,12 @@ nav a:focus {
 /* HERO */
 .hero {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-top: 70px;
+  margin-top: 22px;
 }
 
 .hero-bg {
@@ -152,6 +152,7 @@ nav a:focus {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   transition: opacity 1s ease;
   opacity: 1;
 }
@@ -163,35 +164,40 @@ nav a:focus {
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5% 0 0; /* Reducido padding izquierdo a 0 para mover texto más a la izquierda */
+  padding: 0 4% 0 0; /* Reducido padding izquierdo a 0 para mover texto más a la izquierda */
   position: relative;
   z-index: 1;
 }
 
 .hero-text {
   z-index: 2;
-  color: #333;
-  background: rgba(255, 255, 255, 0.85);
+  color: #fff;
+  background: transparent;
   padding: 3rem;
   border-radius: 15px;
   max-width: 650px;
   text-align: left;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  margin-left: -30px; /* Ajuste negativo para mover más a la izquierda */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0);
+  margin-left: -90px; /* Ajuste negativo para mover más a la izquierda */
 }
 
 .hero-text h2 {
-  font-size: 3.4rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 4.7rem;
+  font-weight: 800;
+  margin-bottom: 0;
+  line-height: 1.2;
+  text-shadow: 1px 1px 3px rgb(6, 6, 6);
+  color: #f5efef;
+  text-align: left;
 }
 
 .hero-text p {
   font-size: 1.9rem;
-  margin-bottom: 0.75rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.95rem;
+  text-shadow: 1px 1px 2px rgb(113, 101, 101);
+  line-height: 1.2;
+  color: #393433;
+  line-height: 1.4;
 }
 
 .hero-buttons {
@@ -221,30 +227,33 @@ nav a:focus {
 
 .btn-secondary {
   display: inline-block;
-  background: transparent;
-  color: #0077b6;
+  background: #0077b6;
+  color: #fff;
   padding: 1.2rem 2.5rem;
-  border: 2px solid #0077b6;
+  border: none;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary:hover {
-  background: #0077b6;
+  background: #005f8c;
   color: #fff;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-logo {
-  max-width: 450px;
+  max-width: 400px;
   height: auto;
   z-index: 2;
   margin-left: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
   margin-right: -50px; /* Ajuste negativo para mover más a la derecha */
+  animation: fadeIn 2s ease-in forwards;
 }
 
 /* Responsive para hero */
@@ -266,6 +275,13 @@ nav a:focus {
     margin-left: 0;
     margin-top: 20px;
     margin-right: 0;
+  }
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1366px) {
+  .hero-bg {
+    background-attachment: scroll;
   }
 }
 
@@ -341,7 +357,7 @@ section h2 {
 #about p { font-size: 1.2rem; line-height: 1.4; margin-bottom: 1rem; }
 
 .highlight-item {
-  background: rgba(118, 197, 250, 0.95);
+  background: rgba(244, 238, 238, 0.402);
   padding: 1rem;
   border-radius: 12px;
   text-align: center;
@@ -350,7 +366,7 @@ section h2 {
 }
 
 .highlight-item:hover {
-  background: rgba(255, 255, 255, 1);
+  background: rgba(35, 31, 31, 0.098);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -366,7 +382,7 @@ section h2 {
 }
 
 .info-card {
-  background: #fdfdfd;
+  background: #e3f2fd;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -447,6 +463,7 @@ section h2 {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  position: relative;
 }
 
 .video-box:hover { transform: translateY(-5px); }
@@ -473,7 +490,7 @@ section h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form { background: #f9f9f9; }
+.contact-form { background: #e3f2fd; }
 .contact-info { background: #e3f2fd; }
 
 .contact-form label {
@@ -506,7 +523,7 @@ section h2 {
 .contact-form textarea:invalid:focus,
 .contact-form input:invalid:not(:placeholder-shown),
 .contact-form textarea:invalid:not(:placeholder-shown) {
-  border-color: #ff4d4d;
+  border-color: #f9f7f7;
   box-shadow: 0 0 8px rgba(255, 77, 77, 0.3);
 }
 
@@ -618,6 +635,13 @@ footer {
   #about { background: linear-gradient(to bottom, rgba(0, 119, 182, 0.3), rgba(0, 0, 128, 0.3)), url('foto1.jpg') no-repeat center/cover; }
   .video-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1366px) {
+  .hero-bg {
+    background-attachment: scroll;
   }
 }
 

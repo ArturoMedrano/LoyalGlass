@@ -222,25 +222,25 @@
       <h2>Our Videos</h2>
       <div class="video-grid">
         <div class="video-box">
-          <video controls muted>
+          <video controls>
             <source src="video1.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
         <div class="video-box">
-          <video controls muted>
+          <video controls>
             <source src="video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
         <div class="video-box">
-          <video controls muted>
+          <video controls>
             <source src="video3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
         <div class="video-box">
-          <video controls muted>
+          <video controls>
             <source src="video5.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -369,6 +369,10 @@
 
     // Iniciar el slideshow cada 5 segundos
     setInterval(nextSlide, 5000);
+
+    // Video Controls on Hover (desactivado - ahora los controles están siempre visibles gracias al atributo 'controls' en HTML)
+    // const videos = document.querySelectorAll('video');
+    // videos.forEach(video => { ... });  // Código original comentado/desactivado
   </script>
 </body>
 
