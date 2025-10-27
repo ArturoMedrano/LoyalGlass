@@ -24,13 +24,13 @@
     </div>
   </div>
 
-  <!-- HEADER (Rediseñado: Más compacto como StartIT) -->
+  <!-- HEADER -->
   <header>
     <div class="header-left">
       <img src="logoLLC.png" alt="Loyas Glass LLC Logo">
-      <h1>Loyasglass LLC</h1> <!-- Corregido: Nombre completo -->
+      <h1>Loyasglass LLC</h1>
     </div>
-    <button class="hamburger" aria-label="Toggle navigation">☰</button>
+    <button class="hamburger" aria-label="Toggle navigation">Menu</button>
     <nav class="nav-menu">
       <a href="#about"><strong>About Us</strong></a>
       <a href="#services"><strong>Services</strong></a>
@@ -41,8 +41,9 @@
   </header>
 
   <main>
-    <!-- HERO (Improved: Content now left-aligned) -->
+    <!-- HERO -->
     <section class="hero">
+      <div class="hero-bg"></div>
       <div class="hero-content">
         <div class="hero-text">
           <h2>Transform Your Space</h2>
@@ -52,10 +53,11 @@
             <a href="#contact" class="cta-button">Get a Quote</a>
           </div>
         </div>
+        <img src="logoN.png" alt="Logo N" class="hero-logo">
       </div>
     </section>
 
-    <!-- ABOUT (sin cambios) -->
+    <!-- ABOUT -->
     <section id="about">
       <div class="about-wrapper">
         <div class="about-content">
@@ -85,7 +87,7 @@
       </div>
     </section>
 
-    <!-- SERVICES (sin cambios) -->
+    <!-- SERVICES -->
     <section id="services">
       <h2>Our Services</h2>
       <div class="card-grid">
@@ -113,7 +115,7 @@
       </div>
     </section>
 
-    <!-- PRODUCTS (sin cambios) -->
+    <!-- PRODUCTS -->
     <section id="products">
       <h2>Our Products</h2>
       <div class="products">
@@ -147,7 +149,7 @@
       </div>
     </section>
 
-    <!-- GALLERY (Corregido: data-lightbox consistente) -->
+    <!-- GALLERY -->
     <section id="gallery">
       <h2>Project Gallery</h2>
       <div class="image-grid">
@@ -196,8 +198,6 @@
             <img src="src/imag7.jpg" alt="Project Image 9" loading="lazy">
           </a>
         </div>
-
-        <!-- NUEVAS IMÁGENES AÑADIDAS -->
         <div class="image-box">
           <a href="src/imag3.jpg" data-lightbox="gallery">
             <img src="src/imag3.jpg" alt="Project Image 10" loading="lazy">
@@ -215,22 +215,28 @@
         </div>
       </div>
     </section>
-    <!-- CONTACT (Corregido: iframe en lugar de frame) -->
+
+    <!-- CONTACT -->
     <section id="contact">
       <h2>Contact Information</h2>
       <div class="contact-container">
         <div class="contact-form">
           <form id="contact-form">
             <label for="name">Name: *</label>
-            <input type="text" id="name" required>
+            <input type="text" id="name" placeholder=" " required>
+
             <label for="last-name">Last Name: *</label>
-            <input type="text" id="last-name" required>
+            <input type="text" id="last-name" placeholder=" " required>
+
             <label for="email">Email: *</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" placeholder=" " required>
+
             <label for="phone">Phone: *</label>
-            <input type="tel" id="phone" required>
+            <input type="tel" id="phone" placeholder=" " required>
+
             <label for="message">Message: *</label>
-            <textarea id="message" rows="5" required></textarea>
+            <textarea id="message" rows="5" placeholder=" " required></textarea>
+
             <button type="submit">Send</button>
           </form>
         </div>
@@ -249,9 +255,9 @@
     </section>
   </main>
 
-  <!-- FOOTER (sin cambios) -->
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Loyasglass LLC. All rights reserved.</p>
+    <p>© 2025 Loyasglass LLC. All rights reserved.</p>
     <div class="footer-links">
       <a href="#about">About Us</a> |
       <a href="#services">Services</a> |
@@ -266,7 +272,7 @@
     </div>
   </footer>
 
-  <!-- FLOATING BUTTONS (sin cambios) -->
+  <!-- FLOATING BUTTONS -->
   <div class="whatsapp-container">
     <a href="https://wa.me/13035476936?text=Hello,%20how%20can%20we%20help%20you?" target="_blank"
       class="whatsapp-float" aria-label="Chat on WhatsApp">
@@ -279,7 +285,7 @@
     </a>
   </div>
 
-  <!-- SCRIPTS (sin cambios) -->
+  <!-- SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
     // Splash Screen
@@ -313,6 +319,23 @@
         lightbox.end();
       }
     });
+
+    // Hero Background Slideshow
+    const heroBg = document.querySelector('.hero-bg');
+    const images = ['imag5.jpg', 'foto3.jpg', 'foto4.jpg'];
+    let currentIndex = 0;
+
+    function nextSlide() {
+      heroBg.style.opacity = 0;
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        heroBg.style.backgroundImage = `linear-gradient(to bottom, rgba(50, 51, 52, 0.2), rgba(0, 0, 128, 0.2)), url('${images[currentIndex]}')`;
+        heroBg.style.opacity = 1;
+      }, 1000); // Tiempo de transición (1 segundo)
+    }
+
+    // Iniciar el slideshow cada 5 segundos
+    setInterval(nextSlide, 5000);
   </script>
 </body>
 
