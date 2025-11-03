@@ -324,7 +324,14 @@
     // Splash Screen
     window.addEventListener("load", () => {
       const splash = document.getElementById("splash");
-      setTimeout(() => { splash.classList.add("hidden"); }, 1500);
+      if (sessionStorage.getItem('splashShown') !== 'true') {
+        setTimeout(() => {
+          splash.classList.add("hidden");
+          sessionStorage.setItem('splashShown', 'true');
+        }, 1500);
+      } else {
+        splash.classList.add("hidden");
+      }
     });
 
     // Hamburger Menu

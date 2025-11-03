@@ -177,7 +177,7 @@ nav a:focus {
   border-radius: 15px;
   max-width: 650px;
   text-align: left;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0);
+  box-shadow: 0 9px 20px rgba(0, 0, 0, 0);
   margin-left: -90px; /* Ajuste negativo para mover más a la izquierda */
 }
 
@@ -349,12 +349,30 @@ section h2 {
   width: 100%;
 }
 
-.about-text { flex: 1; max-width: 55%; }
-.about-highlights { flex: 1; display: flex; flex-direction: column; gap: 1rem; max-width: 40%; }
+.about-text { flex: 1; max-width: 75%; }
+.about-highlights { flex: 1; display: flex; flex-direction: column; gap: 1rem; max-width: 50%; }
 
-#about h2 { font-size: 4.5rem; font-weight: 700; margin-bottom: 2rem; line-height: 1.2; color: #ffffff; } /* Tamaño aumentado */
-#about h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-#about p { font-size: 1.2rem; line-height: 1.4; margin-bottom: 1rem; }
+#about h2 { 
+  font-size: 4.5rem; 
+  font-weight: 700; 
+  margin-bottom: 2rem; 
+  line-height: 1.2; 
+  color: #ffffff; 
+  text-shadow: 1px 1px 3px rgb(6, 6, 6); /* Agregado: sombra similar al hero para "bordes" en las letras */
+} /* Tamaño aumentado */
+
+#about h3 { 
+  font-size: 1.4rem; 
+  margin-bottom: 0.5rem; 
+  text-shadow: 1px 1px 2px rgb(113, 101, 101); /* Agregado: sombra similar al hero para "bordes" en las letras */
+}
+
+#about p { 
+  font-size: 1.2rem; 
+  line-height: 1.4; 
+  margin-bottom: 1rem; 
+  text-shadow: 1px 1px 2px rgb(113, 101, 101); /* Agregado: sombra similar al hero para "bordes" en las letras */
+}
 
 .highlight-item {
   background: rgba(244, 238, 238, 0.402);
@@ -450,28 +468,95 @@ section h2 {
 @media (max-width: 480px) { .image-grid { columns: 1; } }
 
 /* OUR VIDEOS */
+#videos {
+  background: linear-gradient(to bottom, #f4f4f9, #e9ebf0); /* Softer background gradient for appeal */
+  padding: 4rem 5%; /* Increased padding for more space */
+  border-radius: 20px; /* Smoother corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+#videos h2 {
+  font-size: 3rem; /* Slightly smaller for balance at 75% zoom */
+  color: #0c2340;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow for text pop */
+  margin-bottom: 2.5rem;
+}
+
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem; /* Increased gap for breathing room */
+  margin-top: 2rem;
+  scroll-snap-type: x mandatory; /* Para un efecto de snap en el scroll */
+  padding-bottom: 1rem; /* Espacio para scrollbar */
+  scrollbar-width: thin; /* Estilo de scrollbar más delgado */
+  scrollbar-color: #0077b6 #f4f4f9; /* Color de scrollbar */
+}
+
+.video-grid::-webkit-scrollbar {
+  height: 8px; /* Altura de la scrollbar en Chrome/Safari */
+}
+
+.video-grid::-webkit-scrollbar-thumb {
+  background: #0077b6;
+  border-radius: 10px;
+}
+
+.video-grid::-webkit-scrollbar-track {
+  background: #f4f4f9;
+  border-radius: 10px;
 }
 
 .video-box {
-  background: #fdfdfd;
-  border-radius: 12px;
+  background: #ffffff; /* Cleaner white background */
+  border-radius: 16px; /* Softer rounding */
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); /* Deeper shadow for 3D effect */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother transition */
   position: relative;
+  flex: 0 0 500px; /* Ancho fijo más grande para cada video (ajusta según necesites) */
+  scroll-snap-align: start; /* Para snap en el scroll */
 }
 
-.video-box:hover { transform: translateY(-5px); }
+.video-box:hover {
+  transform: translateY(-8px); /* More lift on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18); /* Enhanced shadow on hover */
+}
 
 .video-box video {
   width: 100%;
   height: auto;
   display: block;
+  aspect-ratio: 16 / 9; /* Fixed aspect ratio for uniform video frames */
+  object-fit: cover; /* Ensure videos fill the frame nicely */
+}
+
+/* Add this if you want captions (optional: add <p> tags in HTML for each video) */
+.video-box .caption {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-grid {
+    gap: 1.5rem;
+  }
+
+  .video-box {
+    flex: 0 0 80%; /* En móvil, cada video ocupa el 80% del ancho para scroll horizontal */
+  }
+
+  #videos {
+    padding: 3rem 3%; /* Adjusted for smaller screens */
+  }
+
+  #videos h2 {
+    font-size: 2.5rem;
+  }
 }
 
 /* CONTACT - FORMULARIO SIN BORDES ROJOS AL CARGAR */
