@@ -485,7 +485,7 @@ section h2 {
 .video-grid {
   display: flex;
   overflow-x: auto;
-  gap: 2rem; /* Increased gap for breathing room */
+  gap: 2.5rem; /* Aumentado ligeramente para más separación con videos más grandes */
   margin-top: 2rem;
   scroll-snap-type: x mandatory; /* Para un efecto de snap en el scroll */
   padding-bottom: 1rem; /* Espacio para scrollbar */
@@ -514,7 +514,7 @@ section h2 {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); /* Deeper shadow for 3D effect */
   transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother transition */
   position: relative;
-  flex: 0 0 500px; /* Ancho fijo más grande para cada video (ajusta según necesites) */
+  flex: 0 0 700px; /* Ancho aumentado para videos más grandes (ajusta si necesitas) */
   scroll-snap-align: start; /* Para snap en el scroll */
 }
 
@@ -547,7 +547,7 @@ section h2 {
   }
 
   .video-box {
-    flex: 0 0 80%; /* En móvil, cada video ocupa el 80% del ancho para scroll horizontal */
+    flex: 0 0 90%; /* En móvil, cada video ocupa el 90% del ancho para que se vean grandes */
   }
 
   #videos {
