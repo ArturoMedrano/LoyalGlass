@@ -10,7 +10,11 @@ body {
   background-color: #e9ebf0;
 }
 
+<<<<<<< HEAD:styles.css
 /* SPLASH SCREEN (sin cambios) */
+=======
+/* SPLASH SCREEN */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 #splash {
   position: fixed;
   top: 0;
@@ -62,6 +66,7 @@ body {
   }
 }
 
+<<<<<<< HEAD:styles.css
 /* HEADER (sin cambios) */
 header {
   background-color: rgba(253, 253, 253, 0.95);
@@ -72,10 +77,24 @@ header {
   width: 100%; /* Full width como StartIT */
   top: 0;
   left: 0;
+=======
+/* HEADER */
+header {
+  background-color: rgba(253, 253, 253, 0.9);
+  backdrop-filter: blur(5px);
+  color: #222;
+  padding: 0.8rem 1.5rem;
+  position: fixed;
+  width: 90%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
+<<<<<<< HEAD:styles.css
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #e0e0e0;
 }
@@ -95,6 +114,16 @@ header h1 {
   color: #0077b6;
   font-weight: 600;
   margin: 0;
+=======
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+header img {
+  height: 50px;
+  margin-right: 0.8rem;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 }
 
 .hamburger {
@@ -108,20 +137,31 @@ header h1 {
 
 .nav-menu {
   display: flex;
+<<<<<<< HEAD:styles.css
   gap: 1rem; /* Espaciado como StartIT */
+=======
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 }
 
 nav a {
   color: #222;
   text-decoration: none;
+<<<<<<< HEAD:styles.css
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
   border-radius: 6px;
+=======
+  margin-left: 1rem;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 
 nav a:hover,
 nav a:focus {
+<<<<<<< HEAD:styles.css
   background: #0077b6;
   color: #fff;
   transform: translateY(-1px);
@@ -133,11 +173,25 @@ nav a:focus {
 }
 
 /* HERO (Actualizado: Imagen como fondo completo, texto con overlay blanco semi-transparente para legibilidad, colores originales de imagen preservados) */
+=======
+  background: #0c2340;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+nav a:focus {
+  outline: 2px solid #0077b6;
+  outline-offset: 2px;
+}
+
+/* HERO */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 .hero {
   position: relative;
   height: 80vh;
   display: flex;
   align-items: center;
+<<<<<<< HEAD:styles.css
   overflow: hidden;
   background: url('imag5.jpg') no-repeat center/cover; /* Imagen como fondo completo, sin degradado */
   margin-top: 70px; /* Espacio para header fijo */
@@ -183,10 +237,47 @@ nav a:focus {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
+=======
+  justify-content: flex-start;
+  text-align: left;
+  overflow: hidden;
+  background: url('imag5.jpg') no-repeat center/cover;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin-left: 5%;
+  color: #333;
+  animation: fadeIn 2s ease;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: none;
+  background: none;
+  padding: 0;
+}
+
+.hero p {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-shadow: none;
+  background: none;
+  padding: 0;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 }
 
 .cta-button {
   display: inline-block;
+<<<<<<< HEAD:styles.css
   background: #0077b6; /* Azul para el botón principal */
   color: #fff;
   padding: 1rem 2rem;
@@ -195,10 +286,19 @@ nav a:focus {
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+=======
+  background: #0077b6;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 }
 
 .cta-button:hover {
   background: #005f8c;
+<<<<<<< HEAD:styles.css
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
@@ -285,6 +385,41 @@ nav a:focus {
 
   .hero-spacer {
     display: none; /* Ocultar spacer en móvil para centrado */
+=======
+}
+
+/* Responsive Design for Hero */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    max-width: 90%;
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   }
 }
 
@@ -299,6 +434,10 @@ section {
   animation: fadeIn 1.5s ease;
 }
 
+<<<<<<< HEAD:styles.css
+=======
+/* SECTION TITLES */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 section h2 {
   font-size: 4rem;
   font-weight: 700;
@@ -308,7 +447,11 @@ section h2 {
   color: #0c2340;
 }
 
+<<<<<<< HEAD:styles.css
 /* ABOUT (Actualizado: Azul menos intenso - opacidad reducida para mayor visibilidad de la imagen) */
+=======
+/* ABOUT SECTION (Fixed: Added wrapper to contain overflow and adjusted widths/padding) */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 #about {
   position: relative;
   height: 80vh;
@@ -316,12 +459,18 @@ section h2 {
   align-items: center;
   justify-content: center;
   text-align: left;
+<<<<<<< HEAD:styles.css
   overflow: hidden;
   background: linear-gradient(to bottom, rgba(50, 51, 52, 0.4), rgba(0, 0, 128, 0.4)), url('foto3.jpg') no-repeat center/cover; /* Opacidad reducida de 0.8 a 0.4 para azul más bajo */
+=======
+  overflow: hidden; /* Keeps content within bounds. */
+  background: linear-gradient(to bottom, rgba(0, 119, 182, 0.8), rgba(0, 0, 128, 0.8)), url('foto1.jpg') no-repeat center/cover;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   background-color: transparent;
   box-shadow: none;
   color: #fff;
   padding: 0;
+<<<<<<< HEAD:styles.css
   margin-top: 0;
   border-radius: 0;
   width: 100%;
@@ -330,6 +479,16 @@ section h2 {
 .about-wrapper {
   width: 95%;
   max-width: 1200px;
+=======
+  margin-top: 120px;
+  border-radius: 0;
+  width: 100%; /* Ensures full width. */
+}
+
+.about-wrapper {
+  width: 95%; /* MODIFICADO: Wrapper limits content to 95% to prevent edge overflow. */
+  max-width: 1200px; /* MODIFICADO: Caps max width for large screens. */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   margin: 0 auto;
   height: 100%;
   display: flex;
@@ -342,14 +501,23 @@ section h2 {
   z-index: 2;
   display: flex;
   align-items: flex-start;
+<<<<<<< HEAD:styles.css
   gap: 1.5rem;
   padding: 1.5rem;
+=======
+  gap: 1.5rem; /* MODIFICADO: Reduced gap to 1.5rem to save space. */
+  padding: 1.5rem; /* MODIFICADO: Reduced padding to 1.5rem. */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   width: 100%;
 }
 
 .about-text {
   flex: 1;
+<<<<<<< HEAD:styles.css
   max-width: 55%;
+=======
+  max-width: 55%; /* MODIFICADO: Increased to 55% to give more space to text. */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 }
 
 .about-highlights {
@@ -357,7 +525,11 @@ section h2 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+<<<<<<< HEAD:styles.css
   max-width: 40%;
+=======
+  max-width: 40%; /* MODIFICADO: Reduced to 40% to prevent overflow on right. */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 }
 
 #about h2 {
@@ -379,6 +551,10 @@ section h2 {
   margin-bottom: 1rem;
 }
 
+<<<<<<< HEAD:styles.css
+=======
+/* HIGHLIGHT ITEMS (Adapted for About Us - now white background) */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 .highlight-item {
   background: rgba(255, 255, 255, 0.95);
   padding: 1rem;
@@ -406,17 +582,31 @@ section h2 {
   margin: 0;
 }
 
+<<<<<<< HEAD:styles.css
 @media (max-width: 768px) {
   #about {
     height: 90vh;
     justify-content: flex-start;
     text-align: center;
     margin-top: 0;
+=======
+/* Responsive for About Section */
+@media (max-width: 768px) {
+  #about {
+    height: 90vh; /* MODIFICADO: Increased for mobile to fit content. */
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 100px;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   }
 
   .about-wrapper {
     width: 95%;
+<<<<<<< HEAD:styles.css
     max-width: none;
+=======
+    max-width: none; /* Full width on mobile. */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   }
 
   .about-content {
@@ -603,7 +793,11 @@ section h2 {
   }
 }
 
+<<<<<<< HEAD:styles.css
 /* Lightbox */
+=======
+/* Lightbox Custom Styles */
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 #lightbox {
   z-index: 9999 !important;
 }
@@ -806,6 +1000,7 @@ footer {
 
 /* MOBILE STYLES */
 @media (max-width: 768px) {
+<<<<<<< HEAD:styles.css
   header {
     padding: 0.5rem 1rem;
     width: 100%;
@@ -815,6 +1010,8 @@ footer {
     font-size: 1.2rem;
   }
 
+=======
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   .hamburger {
     display: block;
   }
@@ -823,10 +1020,17 @@ footer {
     display: none;
     flex-direction: column;
     position: absolute;
+<<<<<<< HEAD:styles.css
     top: 100%;
     left: 0;
     width: 100%;
     background: rgba(253, 253, 253, 0.98);
+=======
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fdfdfd;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
     padding: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
@@ -836,8 +1040,12 @@ footer {
   }
 
   nav a {
+<<<<<<< HEAD:styles.css
     margin: 0.5rem 0;
     text-align: center;
+=======
+    margin: 0.5rem;
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
   }
 
   .product-card img,
@@ -848,6 +1056,7 @@ footer {
   section {
     padding: 3rem 2%;
   }
+<<<<<<< HEAD:styles.css
 
   .hero {
     margin-top: 60px;
@@ -868,4 +1077,6 @@ footer {
   to {
     opacity: 1;
   }
+=======
+>>>>>>> 0b7457fde0bddfba9745d0192ed8e8279b6e4883:Pagina/styles.css
 }
